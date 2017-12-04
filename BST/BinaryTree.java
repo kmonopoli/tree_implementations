@@ -90,16 +90,29 @@ public class BinaryTree <E> {
      @return
           the number of elements in the tree
     */
-   // TO BE COMPLETED BY THE STUDENT
+   // do we need to change the javadosc?*?*? which ones?*?*?
+   // do we need to include 2nd javadoc for recursive methods?*?*? will need additional @params!*!*!
+   // DO WE NEED TIME COMPLEXITIES?*?*?
    public int size() {
-      return 0;
+      return size(root);
    }
-
+   private int size(Node<E> localRoot) {
+	   if (localRoot == null) return 0;
+	   else return ( 1 + (size(localRoot.left) + size(localRoot.right)));
+   }
    /** @return the height of this tree */
-   // TO BE COMPLETED BY THE STUDENT
+   // Time complexity?*?*?
    public int height() {
-	  return 0;
+	  return height(root);
    }
+   private int height(Node<E> localRoot) {
+	   if (localRoot == null) return -1;
+	   int lHeight = 1+height(localRoot.left);
+	   int rHeight = 1+height(localRoot.right);
+	   if(lHeight > rHeight) return lHeight;
+	   return rHeight;
+   }
+   
 
    public Iterator <E> iterator() {
 	   return new DepthFirstIterator();

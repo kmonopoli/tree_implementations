@@ -109,7 +109,38 @@ public class RedBlackTree<E extends Comparable<E>>
                 return localRoot;
             }
         } else { // item > localRoot.data
-            // TO BE COMPLETED BY THE STUDENT
+        		if (localRoot.right == null) {
+        			// Create new right child.
+        			localRoot.right = new RedBlackNode<E>(item);
+        			addReturn = true;
+        			return localRoot;
+        		} else { // Need to search.
+        			// Check for two red children, swap colors if found.
+        			moveBlackDown(localRoot);
+        			// Recursively add on the right.
+        			localRoot.right = add((RedBlackNode<E>) localRoot.right, item);
+        			
+        			// See whether the right child is now red
+        			if (((RedBlackNode<E>) localRoot.right).isRed) {
+        				
+        				if (localRoot.right.right != null && ((RedBlackNode<E>) localRoot.right.right).isRed) {
+        					// Right-right grandchild is also red.
+        					
+        					// Single rotation is necessary.
+        					((RedBlackNode<E>) localRoot.right).isRed = false;
+        					localRoot.isRed = true;
+        					return rotateLeft(localRoot);
+        				} else if (localRoot.right.left != null && ((RedBlackNode<E>) localRoot.right.left).isRed) {
+        					//Right-left grandchild is also red.
+        					// Double rotation is necessary
+        					localRoot.right = rotateRight(localRoot.right);
+        					((RedBlackNode<E>) localRoot.right).isRed = false;
+        					localRoot.isRed = true;
+        					return rotateLeft(localRoot);
+        				}
+        			}
+        			return localRoot;
+        		}
         }
     }
 

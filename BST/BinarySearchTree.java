@@ -26,11 +26,25 @@ public class BinarySearchTree <E extends Comparable <E>>
            the object if it is found in the tree; null
                      otherwise
     */
-   // TO BE IMPLEMENTED BY THE STUDENT
-   public E find (E target, IntObject count) {
-	  return null;
+   public E find (E target, IntObject count) { 
+	   return find( root, target, count);
    }
-
+   /** Recursive find method 
+    * @param localRoot The local subtree's root
+    * @param target The element to be searched
+    * @param count to keep track of the comparisons made for this find operation
+      @return the object if it is found in the tree; null otherwise
+    */
+   private E find( Node<E> localRoot, E target, IntObject count) {
+	   if ( localRoot == null) return null;
+	   // Compare target with the data field at the root.
+	   int compResult = target.compareTo(localRoot.data);
+	   count.setData(count.getData()+1); // to keep track of comparisons ?*?*?
+	   if (compResult == 0) return localRoot.data;
+	   else if (compResult < 0) return find(localRoot.left, target, count);
+	   else return find(localRoot.right, target, count); 
+   }
+   
    /**
      inserts an element into a BST
      @param
@@ -71,16 +85,44 @@ public class BinarySearchTree <E extends Comparable <E>>
        }
    }
 
-   /** @return the minimum element in the Set */
-   // TO BE COMPLETED BY THE STUDENT
+   /** @return the minimum element in the Set
+    * 		null if empty
+    */
    public E first() {
-      return null;
+	   if (root == null) return null;
+	   return first(root);
+   }
+   /** Recursive first method
+    * @param localRoot The local subtree's root
+    * @return the minimum element in the Set
+    */
+   private E first(Node<E> localRoot) {
+	   if(localRoot.left == null) {
+		   return localRoot.data;
+	   } else {
+		   return first(localRoot.left);
+	   }
    }
 
-   /** @return the maximum element in the Set */
-   // TO BE COMPLETED BY THE STUDENT
+   /** @return the maximum element in the Set
+    *	   null if empty
+    */
+   // do these methods need to work with other datasets? (ex: single book or 2 books only)?*?*?
+   // do we need time complexities ?*?*?
    public E last() {
-      	return null;
+      	if (root == null ) return null;
+      	return last(root);
+   }
+   /** Recursive last method
+    * @param localRoot The local subtree's root
+    * @return the maximum element in the Set, why not Tree?*?*?
+    */
+   private E last(Node<E> localRoot) {
+	   if(localRoot.right == null) {
+		   return localRoot.data;
+	   } else {
+		   return last(localRoot.right);
+	   }
    }
 }
 
