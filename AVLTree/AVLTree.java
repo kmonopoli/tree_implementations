@@ -44,7 +44,7 @@ public class AVLTree<E extends Comparable<E>>
     private boolean increase;
 
     /** Flag to indicate that height of tree has decreased */
-    private boolean decrease; // do we use this ever when rebalancing?*?*?
+    private boolean decrease; 
 
 
     /**
@@ -103,8 +103,8 @@ public class AVLTree<E extends Comparable<E>>
 	        	localRoot.right = add((AVLNode<E>) localRoot.right,item);
 	        	
 	        	if(increase) { 
-	        		incrementBalance(localRoot); // ?*?*? should this be decrement?*?*?
-	        		if (localRoot.balance > AVLNode.RIGHT_HEAVY) { //?*?*?
+	        		incrementBalance(localRoot); 
+	        		if (localRoot.balance > AVLNode.RIGHT_HEAVY) { 
 	        			increase = false; 
 	        			return rebalanceRight(localRoot);
 	        		}
@@ -168,9 +168,9 @@ public class AVLTree<E extends Comparable<E>>
     private AVLNode<E> rebalanceRight(AVLNode<E> localRoot) {
     		// Obtain reference to right child.
         AVLNode<E> rightChild = (AVLNode<E>) localRoot.right;
-        // See whether right-left heavy. ?*?*?
+        // See whether right-left heavy. 
         if (rightChild.balance < AVLNode.BALANCED) { 
-            // Obtain reference to right-left child. ?*?*?
+            // Obtain reference to right-left child. 
             AVLNode<E> rightLeftChild = (AVLNode<E>) rightChild.left;
             // Adjust the balances to be their new values after
             // the rotations are performed.
@@ -188,7 +188,7 @@ public class AVLTree<E extends Comparable<E>>
             }
             // Perform right rotation.
             localRoot.right = rotateRight(rightChild);
-        } else { //Right-Right case ?*?*?
+        } else { //Right-Right case
             // In this case the rightChild (the new root)
             // and the root (new left child) will both be balanced
             // after the rotation.
