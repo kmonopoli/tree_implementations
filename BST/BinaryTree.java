@@ -90,9 +90,6 @@ public class BinaryTree <E> {
      @return
           the number of elements in the tree
     */
-   // do we need to change the javadosc?*?*? which ones?*?*?
-   // do we need to include 2nd javadoc for recursive methods?*?*? will need additional @params!*!*!
-   // DO WE NEED TIME COMPLEXITIES?*?*?
    public int size() {
       return size(root);
    }
@@ -101,7 +98,6 @@ public class BinaryTree <E> {
 	   else return ( 1 + (size(localRoot.left) + size(localRoot.right)));
    }
    /** @return the height of this tree */
-   // Time complexity?*?*?
    public int height() {
 	  return height(root);
    }

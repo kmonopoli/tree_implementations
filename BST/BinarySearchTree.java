@@ -39,7 +39,7 @@ public class BinarySearchTree <E extends Comparable <E>>
 	   if ( localRoot == null) return null;
 	   // Compare target with the data field at the root.
 	   int compResult = target.compareTo(localRoot.data);
-	   count.setData(count.getData()+1); // to keep track of comparisons ?*?*?
+	   count.setData(count.getData()+1); 
 	   if (compResult == 0) return localRoot.data;
 	   else if (compResult < 0) return find(localRoot.left, target, count);
 	   else return find(localRoot.right, target, count); 
@@ -107,15 +107,13 @@ public class BinarySearchTree <E extends Comparable <E>>
    /** @return the maximum element in the Set
     *	   null if empty
     */
-   // do these methods need to work with other datasets? (ex: single book or 2 books only)?*?*?
-   // do we need time complexities ?*?*?
    public E last() {
       	if (root == null ) return null;
       	return last(root);
    }
    /** Recursive last method
     * @param localRoot The local subtree's root
-    * @return the maximum element in the Set, why not Tree?*?*?
+    * @return the maximum element in the Set
     */
    private E last(Node<E> localRoot) {
 	   if(localRoot.right == null) {
