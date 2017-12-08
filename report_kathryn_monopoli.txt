@@ -1,3 +1,7 @@
+Report
+Assignment: Project 6
+Name: Kathryn Monopoli
+
 I struggled most with the rebalanceLeft and rebalanceRight methods for the AVL tree. I needed to make some changes to the starter code in the rebalanceLeft method. While I understood that there was a problem with my implementation of the method, I required some help from the instructor to be sure how to move forward because some of the information in the textbook was incorrect. I confirmed the changes to the code by creating a smaller version of the Books.txt input file and using the inorderPrint method to be sure the elements were added as expected. 
 
 I spent ten hours on this project, however the first two hours (on 11/18) were spent solving an issue I had reading in the Books.txt file, and were not related to time spent to understand the material. After working out that problem, the rest of the project was fairly straightforward (excepting the issue I had implementing the AVL tree as described above). I completed most of the project on 11/19, working for about six hours. I spent an addition two hours on the project on 11/20 after meeting with the instructor to discuss the rebalanceLeft and rebalanceRight methods for the AVL tree. 
