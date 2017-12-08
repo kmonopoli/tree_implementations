@@ -1,5 +1,5 @@
 Report
-Assignment: Project 6
+Assignment: Project 4
 Name: Kathryn Monopoli
 
 I struggled most with the rebalanceLeft and rebalanceRight methods for the AVL tree. I needed to make some changes to the initial code in the rebalanceLeft method. While I understood that there was a problem with my implementation of the method, I required some help from the instructor to be sure how to move forward because some of the information in the textbook was incorrect with respect to the balance factors. I confirmed the changes to the code by creating a smaller version of the Books.txt input file and using the inorderPrint method to be sure the elements were added as expected. 
