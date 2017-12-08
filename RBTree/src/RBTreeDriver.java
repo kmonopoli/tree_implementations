@@ -39,9 +39,7 @@ public class RBTreeDriver {
        IntObject searchCount = new IntObject(0);
 
        try {
-	   	   Scanner inFile = new Scanner (new FileInputStream("Books.txt"),  "ISO-8859-1");
-
-		 //  Scanner inFile = new Scanner (new FileInputStream("Books.txt"));
+		   Scanner inFile = new Scanner (new FileInputStream("Books.txt"));
 
            Scanner testFile = new Scanner(new FileInputStream("TestISBN.txt"));
 
